@@ -1,0 +1,353 @@
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap');
+
+* {
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    margin: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+    background-color: powderblue;
+}
+
+/* Book */
+.book {
+
+
+    z-index: 100;
+    -webkit-perspective: 1300px;
+    perspective: 1300px;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    position: relative;
+    width: 700px;
+    height: 500px;
+
+    background-size: cover;
+}
+
+.paper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    perspective: 1500px;
+}
+
+.front,
+.back {
+    background-color: white;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transform-origin: left;
+    transition: transform 0.5s;
+}
+
+.front {
+    z-index: 1;
+    backface-visibility: hidden;
+    border-left: 3px solid powderblue;
+}
+
+.back {
+    z-index: 0;
+}
+
+.front-content,
+.back-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.back-content1 {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    padding-left:10px;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex;
+    margin: 19px;
+    padding: 80px;
+    font-family: "Monospace";
+}
+
+.heading1 {
+    font-weight: bold;
+    color: #09aba3;
+    font-size: 20px;
+    font-family: "Monospace";
+}
+
+.back-content {
+    transform: rotateY(180deg)
+}
+
+/* Paper flip effect */
+.flipped .front,
+.flipped .back {
+    transform: rotateY(-180deg);
+}
+
+/* Navigation Buttons */
+.navigation-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    /* Adjust as needed */
+}
+
+button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    margin: 0 10px;
+    width: 100px;
+    height: 40px;
+    border-width: 2px;
+    border-radius: 20px;
+    font-size: 16px;
+    color: #fff;
+    /* Text color */
+    background-color: #007bff;
+    /* Button background color */
+    border-color: #007bff;
+    /* Button border color */
+}
+
+.last-button {
+    margin-top: 10px;
+    height:25px;
+    width:80px;
+    font-size : 10px;
+}
+
+button:focus {
+    outline: none;
+}
+
+button:hover {
+    transform: scale(1.1);
+}
+
+/* Paper stack order */
+#p1 {
+    z-index: 3;
+}
+
+#p2 {
+    z-index: 2;
+}
+
+#p3 {
+    z-index: 1;
+}
+
+.slide1 {
+    background-image: url("https://i.ibb.co/rtBTxGT/Screenshot-2024-03-28-221435.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100%;
+}
+
+.slide2 {
+    background-image: url("https://i.ibb.co/2gMDgt5/Screenshot-2024-03-29-102546.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100%;
+}
+
+.slide3 {
+    background-image: url("https://i.ibb.co/pw2kBqG/Screenshot-2024-03-29-111701.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100%;
+}
+
+.slide4 {
+    background-image: url("https://i.ibb.co/jbppg9n/Screenshot-2024-03-30-122843.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100%;
+}
+
+.slide5 {
+    background-image: url("https://i.ibb.co/T4D2cbn/Screenshot-2024-03-30-120118.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100%;
+}
+
+.slide6 {
+    background-image: url("https://d1v7g7y4y70yfq.cloudfront.net/02-Blog/Main-Blog-Illustrations/_1200x630_crop_center-center_82_none/blog-2020-04-07-how_to_say_thank_you_in_business.png?mtime=1614093387");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100%;
+}
+
+.heading {
+    font-weight: bold;
+    color: brown;
+    font-family: "Monospace";
+}
+
+.normal-heading {
+    font-weight: normal;
+    color: brown;
+    font-family: "Monospace";
+}
+
+.side-container {
+    margin-top: 70px;
+    margin-left: 100px;
+}
+
+.side-container1 {
+    margin-top: 70px;
+    margin-left: 400px;
+    padding: 8px;
+    align-content: center;
+}
+
+.nav-bar {
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-bar a {
+    float: left;
+    display: block;
+    color: brown;
+    font-size: 20px;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.nav-bar a:hover {
+    background-color: #ddd;
+}
+
+
+
+.heading2 {
+    margin-top: 40px;
+    color: #09aba3;
+    font-weight: bold;
+    font-family: "Monospace";
+}
+
+.paragraph {
+    color: #09aba3;
+    font-weight: normal;
+    font-size: 20px;
+    font-family: "Monospace";
+}
+
+.heading3 {
+    color: #bd0630;
+    font-weight: bold;
+    font-family: "Monospace";
+}
+
+.paragraph1 {
+    color: #bd0630;
+    font-weight: normal;
+    font-size: 20px;
+    font-family: "Monospace";
+}
+
+.inner-container {
+    margin-top: 100px;
+    margin-left: 250px;
+}
+
+.last1 {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.heading5 {
+    font-weight: bold;
+    color: white;
+    font-family: "Monospace";
+}
+
+.heading4 {
+    font-weight: bold;
+    color: brown;
+    font-family: "Monospace";
+}
+
+
+.nav-bar1 {
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.nav-bar1 a {
+    float: left;
+    display: block;
+    color: white;
+    font-size: 15px;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.nav-bar1 a:hover {
+    background-color: #ddd;
+    font-family: "Monospace";
+}
+
+/* Form Inputs */
+input[type="text"],
+input[type="email"],
+input[type="total"],
+input[type="radio"] {
+    width: auto;
+    border: none;
+    border-bottom: 1px solid #ddd; /* Add a bottom border */
+    outline: none;
+    padding: 5px;
+    margin-bottom: 10px;
+    font-size: 10px;
+    transition: border-bottom-color 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="total"]:focus {
+    border-bottom-color: #007bff; /* Change color on focus */
+}
+
+/* Radio Buttons */
+input[type="radio"] {
+    margin-right: 5px; /* Add spacing between radio buttons */
+}
